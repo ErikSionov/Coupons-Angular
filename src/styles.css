@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;900&display=swap');
+
+html {
+  font-family: 'Poppins', sans-serif;
+  color: #d90f49;
+}
+
+button {
+  text-align: center;
+  font-size: 1rem;
+  color: aliceblue;
+  display: block;
+  margin: auto;
+  background: linear-gradient(178.18deg, #ff326c -13.56%, #351111 158.3%);
+  border: 0px;
+  padding: 10px 30px 10px 30px;
+  border-radius: 100px;
+}
+
+button:hover {
+  background: linear-gradient(178.18deg, #351111 -13.56%, #ff326c 158.3%);
+}

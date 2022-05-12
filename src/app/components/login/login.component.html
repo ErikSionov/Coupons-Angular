@@ -1,6 +1,31 @@
-<p>login</p>
-<input #email type="text" name="email" id="email" required />
-<br />
-<input #psw type="password" name="psw" id="psw" required />
-<br />
-<button (click)="login(email.value, psw.value)">Login</button>
+<div>
+  <img src="/assets/LogoMascot.png" alt="little devil" />
+  <h2>Little Devil</h2>
+  <h1>DEALS</h1>
+</div>
+
+<div class="input_field">
+  <input
+    #email
+    type="text"
+    name="email"
+    id="email"
+    required
+    placeholder="email"
+  />
+</div>
+<div class="input_field">
+  <input
+    #psw
+    type="password"
+    name="psw"
+    id="psw"
+    required
+    placeholder="password"
+  />
+</div>
+<div class="button">
+  <button (click)="login(email.value, psw.value)">LOGIN</button>
+</div>
+
+<div class="bottom"></div>
