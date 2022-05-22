@@ -1,0 +1,87 @@
+:host {
+  display: block;
+  max-height: 400px;
+}
+
+.container {
+  padding: 1vw;
+  overflow-y: visible;
+  background: #ffffff;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  margin: 0 4%;
+  overflow-y: auto;
+}
+
+.table {
+  padding: 2%;
+  overflow-y: visible;
+  background: #ffffff;
+  /* box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25);
+  border-radius: 30px; */
+  max-height: 55vh;
+  margin: auto;
+  overflow-y: auto;
+}
+table {
+  margin: auto;
+  width: 100%;
+}
+
+tr {
+}
+
+th {
+  text-align: left;
+  width: 20%;
+  background: linear-gradient(178.18deg, #ff326c -13.56%, #351111 158.3%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.1rem;
+}
+
+th:nth-child(1) {
+  width: 10%;
+}
+
+td {
+  color: #333333;
+}
+
+td:nth-child(1) {
+  font-weight: bold;
+}
+
+.editButtons {
+  text-align: right;
+}
+
+.delete {
+  display: inline;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.edit {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  padding-right: 5%;
+  color: #ff326c;
+  font-weight: bold;
+  background: white;
+}
+
+.edit:hover {
+  color: #351111;
+}
+
+form {
+  text-align: center;
+}
+
+form > button.small-button {
+  margin: 5px;
+  padding: 10px;
+}

@@ -26,10 +26,12 @@ export class LoginComponent implements OnInit {
       },
       error: (err) => {
         let errorObject = JSON.parse(err.error);
+        console.log(errorObject);
         console.log(errorObject.error + ': ' + errorObject.message);
       },
       complete: () => {
-        console.log('complete');
+        this.loginService.acceptedToken = true;
+        this.loginService.userName = 'change next';
       },
     });
   }

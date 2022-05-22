@@ -1,1 +1,32 @@
+:host {
+  display: block;
+  box-sizing: border-box;
+  /* setting up border around the dashboard */
+  margin: 6px;
+  border-radius: 20px;
+  border: 8px solid #d90f49;
+}
 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  /* border: 2px solid red; */
+}
+
+aside {
+  grid-row: 1 / span 3;
+  /* border: 2px solid black; */
+}
+
+header {
+  /* grid: 2px solid black; */
+}
+
+main {
+  /* border: 2px solid black; */
+}
+
+footer {
+  /* border: 2px solid black; */
+}

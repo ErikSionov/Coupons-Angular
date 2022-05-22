@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  font-size: inherit;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  display: block;
+  background-color: #d90f49;
+}
+
+.centered > * {
+  font-size: 0.6vw;
+}
+
+img.bottom {
+  display: block;
+  width: 100%;
+}
+
+.mascot {
+  position: absolute;
+  bottom: 5%;
+  right: 1%;
+  width: 8%;
+}

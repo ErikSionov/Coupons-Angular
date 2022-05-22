@@ -24,37 +24,7 @@ img {
   margin: auto;
   padding-left: 50px;
 }
-.input_field {
-  margin: auto;
-  width: fit-content;
-  padding-bottom: 5px;
-}
-input {
-  display: block;
-  margin: auto;
-  padding-left: 20px;
-  border: 2px solid #d90f49;
-  border-radius: 20px;
-  height: 20px;
-}
 
-.button {
-  padding: 5px;
-}
-
-::placeholder {
-  color: lightpink;
-}
-
-::target-text {
-  padding-left: 20px;
-}
-
-.buttom {
-  display: block;
-  position: absolute;
-  width: 1440px;
-  height: 185px;
-  left: 0px;
-  top: 0px;
+h5 {
+  font-weight: 600;
 }

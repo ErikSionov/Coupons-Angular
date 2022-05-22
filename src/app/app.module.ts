@@ -11,6 +11,10 @@ import { RootComponent } from './components/root/root.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { MainComponent } from './components/main/main.component';
+import { CompaniesComponent } from './components/companies/companies.component';
+import { ModalModule } from './modules/modal.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,16 @@ import { MenuComponent } from './components/menu/menu.component';
     FooterComponent,
     MenuComponent,
     Page404Component,
+    MainComponent,
+    CompaniesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
+    ModalModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [
