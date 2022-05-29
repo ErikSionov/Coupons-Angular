@@ -5,6 +5,9 @@ import { Page404Component } from './components/page404/page404.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginGuard } from './guards/login.guard';
 import { CompaniesComponent } from './components/companies/companies.component';
+import { MainComponent } from './components/main/main.component';
+import { CouponsComponent } from './components/coupons/coupons.component';
+import { CustomersComponent } from './components/customer/customers.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,6 +19,27 @@ const routes: Routes = [
       {
         path: 'companies',
         component: CompaniesComponent,
+        canActivate: [
+          LoginGuard,
+        ],
+      },
+      {
+        path: 'main',
+        component: MainComponent,
+        canActivate: [
+          LoginGuard,
+        ],
+      },
+      {
+        path: 'coupons',
+        component: CouponsComponent,
+        canActivate: [
+          LoginGuard,
+        ],
+      },
+      {
+        path: 'customers',
+        component: CustomersComponent,
         canActivate: [
           LoginGuard,
         ],
@@ -35,4 +59,4 @@ const routes: Routes = [
     RouterModule,
   ],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

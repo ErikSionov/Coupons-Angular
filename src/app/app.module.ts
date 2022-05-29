@@ -11,10 +11,13 @@ import { RootComponent } from './components/root/root.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { MainComponent } from './components/main/main.component';
-import { CompaniesComponent } from './components/companies/companies.component';
 import { ModalModule } from './modules/modal.module';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
+import { CompaniesComponent } from './components/companies/companies.component';
+import { MainComponent } from './components/main/main.component';
+import { CouponsComponent } from './components/coupons/coupons.component';
+import { CustomersComponent } from './components/customer/customers.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +28,11 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     MenuComponent,
     Page404Component,
-    MainComponent,
     CompaniesComponent,
+    SearchComponent,
+    MainComponent,
+    CouponsComponent,
+    CustomersComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,4 +47,4 @@ import { FormsModule } from '@angular/forms';
     RootComponent,
   ],
 })
-export class AppModule {}
+export class AppModule { }

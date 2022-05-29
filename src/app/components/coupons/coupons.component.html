@@ -1,0 +1,111 @@
+<ng-template #loading class="loading">
+  <div style="text-align: center">
+    <img src="assets/images/loading.gif" alt="loading..." width="150" />
+    <h4>LOADING...</h4>
+  </div>
+</ng-template>
+
+<div class="container">
+
+  <div style="margin-bottom: 20px;">
+    <app-search [(items)]="this.coupons"></app-search>
+    <Button type="button" class="small-button" (click)="getAllCoupons()">
+      GET ALL COUPONS
+    </Button>
+    <Button type="button" class="small-button" (click)="resetForm(); modalService.open('add')">+ ADD NEW</Button>
+    <Button type="button" class="small-button" (click)="logCoupons()">debug: check
+      coupons</Button>
+    <br />
+  </div>
+
+  <div class="coupons-table">
+
+    <div class="coupon" *ngFor="let coupon of coupons as Coupon">
+      <!-- image div -->
+      <div class="image-wrapper">
+        <img class="coupon-image" src="https://cdn.hswstatic.com/gif/airplane-windows.jpg" alt="">
+      </div>
+      <!-- image local location: assets/images/coupons/{{coupon.image}}.jpg -->
+      <!-- title and description div -->
+      <div>
+        <h3 class="title">{{coupon.title | uppercase}}</h3>
+        <p style="color: #d90f49;">DESCRIPTION</p>
+        <p>
+          {{coupon.description}}
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat quaerat velit consequuntur, reprehenderit
+          odio, ad libero quia aliquam nesciunt pariatur rerum. Possimus, quia rerum voluptates dignissimos itaque
+          quas maiores.
+        </p>
+      </div>
+      <!-- other info div -->
+      <div class="other-info-wrapper">
+        <div style="text-align: right;">
+          <a class="link-to-coupon-page" href="/coupons-details/{{coupon.id}}">
+            to coupons page >
+          </a>
+        </div>
+        <div style="display: block; top:20px; height: fit-content;">
+          <p style="color: grey; font-size: x-small; margin: 0; padding: 0;">coupon id#{{coupon.id}}</p>
+          <hr style="margin: 0px 10px 0px 0px; opacity: 0.5;">
+          <table style="width: 250px;">
+            <tr>
+              <th>
+                <p>FROM</p>
+              </th>
+              <th>
+                <p>UNTIL</p>
+              </th>
+              <th>
+                <p>CATEGORY</p>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <p>{{coupon.startDate | date:'shortDate'}}</p>
+              </td>
+              <td>
+                <p>{{coupon.endDate | date:'shortDate'}}</p>
+              </td>
+              <td>
+                <p>{{coupon.category}}</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- <div class="table">
+    <table *ngIf="coupons; else loading">
+      <tr>
+        <th>#ID</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>PASSWORD</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let item of coupons as Company">
+        <td>{{ item.id }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.startDate | date:'shortDate'}}</td>
+        <td>{{ item.endDate | date:'shortDate'}}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.price }}</td>
+        <td class="editButtons">
+          <button type="button" class="edit" (click)="updateCoupons()">
+            EDIT
+          </button>
+          <button type="button" class="delete" (click)="coupon = item; modalService.open('delete')">
+            <img src="assets/images/delete_icon.png" alt="" />
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div> -->
+
+</div>

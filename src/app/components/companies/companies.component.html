@@ -1,1 +1,137 @@
-<p>companies works!</p>
+<ng-template #loading class="loading">
+  <div style="text-align: center">
+    <img src="assets/images/loading.gif" alt="loading..." width="150" />
+    <h4>LOADING...</h4>
+  </div>
+</ng-template>
+
+<div class="container">
+  <div style="margin-bottom: 20px;">
+    <app-search [(items)]="this.companies" searchType="company"></app-search>
+    <Button type="button" class="small-button" (click)="getAllCompanies('all')">
+      GET ALL COMPANIES
+    </Button>
+    <Button type="button" class="small-button" (click)="resetForm(); modalService.open('add')">+ ADD NEW</Button>
+    <Button type="button" class="small-button" (click)="logCompanies()">debug: check
+      companies</Button>
+    <br />
+  </div>
+
+  <div class="table">
+    <table *ngIf="companies; else loading">
+      <tr>
+        <th>#ID</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>PASSWORD</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let item of companies as Company">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.password }}</td>
+        <td class="editButtons">
+          <button type="button" class="edit" (click)="openUpdateCompany(item)">
+            EDIT
+          </button>
+          <button type="button" class="delete" (click)="company = item; modalService.open('delete')">
+            <img src="assets/images/delete_icon.png" alt="" />
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!------- ------ ------->
+<!------- ADD MODAL ------->
+<!------- ------ ------->
+<app-modal width="200px" height="300px" id="add">
+  <Button type="button" class="small-button modal-close" (click)="resetForm(); modalService.close('add')">
+    X
+  </Button>
+  <h4>Add new company</h4>
+
+  <form class="add-company">
+    <input class="input_field" name="name" type="text" placeholder="name" [(ngModel)]="company.name" />
+    <br />
+    <input class="input_field" name="email" type="email" placeholder="email" [(ngModel)]="company.email" />
+    <br />
+    <input class="input_field" name="password" type="password" placeholder="password" [(ngModel)]="company.password" />
+    <br />
+    <Button style="display: inline-block" type="button" class="small-button"
+      (click)="addCompany(); modalService.close('add')">
+      ADD
+    </Button>
+    <Button style="display: inline-block" type="button" class="small-button" (click)="resetForm()">
+      RESET
+    </Button>
+  </form>
+</app-modal>
+
+<!------- ------ ------->
+<!------- DELETE MODAL ------->
+<!------- ------ ------->
+<app-modal width="200px" height="250px" id="delete">
+  <Button type="button" class="small-button modal-close" (click)="resetForm(); modalService.close('delete')">
+    X
+  </Button>
+  <form>
+    <h4>Are you sure you want to delete?</h4>
+    <p>company id :{{ company.id }}</p>
+    <br />
+    <Button style="display: inline-block" type="button" class="small-button"
+      (click)="deleteCompany(company.id); modalService.close('delete')">
+      DELETE
+    </Button>
+    <Button style="display: inline-block" type="button" class="small-button"
+      (click)="resetForm(); modalService.close('delete')">
+      CANCEL
+    </Button>
+  </form>
+</app-modal>
+
+<!------- ------ ------->
+<!------- EDIT MODAL ------->
+<!------- ------ ------->
+<app-modal width="200px" height="300px" id="edit">
+  <Button type="button" class="small-button modal-close" (click)="closeUpdateCompanyWithoutChanges()">
+    X
+  </Button>
+  <h4>Edit company</h4>
+
+  <form class="add-company">
+    <input class="input_field" name="name" type="text" placeholder="name" [(ngModel)]="company.name" />
+    <br />
+    <input class="input_field" name="email" type="email" placeholder="email" [(ngModel)]="company.email" />
+    <br />
+    <input class="input_field" name="password" type="text" placeholder="password" [(ngModel)]="company.password" />
+    <br />
+    <Button style="display: inline-block" type="button" class="small-button"
+      (click)="updateCompany(); modalService.close('edit'); resetForm()">
+      CONFIRM
+    </Button>
+    <Button style="display: inline-block" type="button" class="small-button"
+      (click)="closeUpdateCompanyWithoutChanges()">
+      CANCEL
+    </Button>
+  </form>
+</app-modal>
+
+<!------- ------ ------->
+<!------- ERROR MODAL ------->
+<!------- ------ ------->
+<app-modal width="200px" height="250px" id="error">
+  <Button type="button" class="small-button modal-close" (click)="modalService.close('error')">
+    X
+  </Button>
+  <form>
+    <h4>ERROR</h4>
+    <p>{{ errorMessage }}</p>
+    <br />
+    <Button style="display: inline-block" type="button" class="small-button" (click)="modalService.close('error')">
+      CONFIRM
+    </Button>
+  </form>
+</app-modal>

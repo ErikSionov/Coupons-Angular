@@ -1,12 +1,11 @@
 <div class="container">
-  <header>
-    <app-header></app-header>
-  </header>
+  <app-header></app-header>
   <aside>
     <app-menu></app-menu>
   </aside>
-  <app-main></app-main>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
   <!-- the router-outlet tag will insert the componet maped to the path -->
-  <!-- <router-outlet></router-outlet> -->
   <app-footer></app-footer>
 </div>

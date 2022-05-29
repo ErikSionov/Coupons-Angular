@@ -27,17 +27,15 @@ export class ModalComponent implements OnInit {
 
     document.body.appendChild(this.element);
 
-    this.element.addEventListener('click', (el: any) => {
-      if (el.target.className === 'bg') {
-        this.close();
-      }
-    });
+    // this.element.addEventListener('click', (el: any) => {
+    //   if (el.target.className === 'bg') {
+    //     this.close();
+    //   }
+    // });
 
     this.element.style.display = 'none';
     this.element.querySelector('.modal-body').style.width = this.width;
     this.element.querySelector('.modal-body').style.height = this.height;
-    // this.element.style.width = this.width;
-    // this.element.style.height = this.height;
     this.modalService.add(this);
   }
 

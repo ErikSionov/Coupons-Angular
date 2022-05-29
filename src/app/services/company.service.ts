@@ -10,19 +10,9 @@ import { Company } from '../models/company.model';
 export class CompanyService implements OnInit {
   private baseUrl = environment.baseUrl;
 
-  private companies = new BehaviorSubject<Company[]>([]);
+  constructor(private httpClient: HttpClient) { }
 
-  get companiesSubject$(): Observable<Company[]> {
-    return this.companies.asObservable();
-  }
-
-  constructor(private httpClient: HttpClient) {}
-
-  ngOnInit(): void {
-    this.GetCompanies('all').subscribe((c) => {
-      this.companies.next(c);
-    });
-  }
+  ngOnInit(): void { }
 
   private getTokenHeader(): HttpHeaders {
     let token = sessionStorage.getItem('token');
@@ -32,7 +22,15 @@ export class CompanyService implements OnInit {
 
   public GetCompanies(callType: string) {
     let url = this.baseUrl + `api/admin/company/${callType}`;
-    let options = { headers: this.getTokenHeader() };
+    let headers = this.getTokenHeader();
+    let options = { headers: headers };
+    return this.httpClient.get<Company[]>(url, options);
+  }
+
+  public SearchCompanies(companyNameOrEmail: string) {
+    let url = this.baseUrl + `api/admin/company/search/${companyNameOrEmail}`
+    let headers = this.getTokenHeader();
+    let options = { headers: headers };
     return this.httpClient.get<Company[]>(url, options);
   }
 

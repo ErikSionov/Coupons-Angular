@@ -1,0 +1,31 @@
+:host {
+  position: relative;
+}
+
+#search {
+  display: inline-block;
+  height: 33px;
+  padding-left: 30px;
+  width: 300px;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+div {
+  display: inline;
+  position: relative;
+}
+
+.loading {
+  position: relative;
+  width: 33px;
+  vertical-align: middle;
+}
+
+.icon {
+  position: absolute;
+  width: 18px;
+  left: 10px;
+  top: 3px;
+  opacity: 0.5;
+}

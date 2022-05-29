@@ -1,0 +1,121 @@
+:host {
+  display: block;
+  max-height: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 1vw;
+  overflow-y: visible;
+  background: #ffffff;
+  box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  text-align: right;
+  margin: 0 4%;
+  overflow-y: auto;
+}
+
+.coupons-table {
+  padding: 2%;
+  overflow-y: visible;
+  background: #ffffff;
+  /* box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25);
+    border-radius: 30px; */
+  max-height: 43vh;
+  margin: auto;
+  overflow-y: auto;
+  padding-top: 0;
+  text-align: left;
+}
+
+.coupon {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 15px;
+  border: 1px solid #d90f49;
+  box-sizing: border-box;
+  margin: 10px 0px;
+  box-shadow: 0px 0px 31px rgba(0, 0, 0, 0.07);
+}
+
+.image-wrapper {
+  margin: auto;
+  padding: 5px;
+}
+
+.coupon-image {
+  position: relative;
+  display: block;
+  border: 1px solid none;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.title {
+  position: relative;
+  text-align: left;
+  margin: 5px 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  background: linear-gradient(178.18deg, #FF326C -13.56%, #351111 158.3%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+p {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+  margin: 5px;
+  max-height: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+table {
+  margin-right: 10px;
+}
+
+tr>th>p {
+  color: #d90f49;
+  margin: 0;
+  padding: 0;
+}
+
+tr>td>p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+  padding: 0;
+}
+
+.other-info-wrapper {
+  max-width: 400px;
+}
+
+.link-to-coupon-page {
+  color: #d90f49;
+  font-weight: 800;
+  white-space: nowrap;
+  margin-right: 10px;
+  margin-top: 10px;
+}

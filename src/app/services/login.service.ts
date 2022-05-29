@@ -10,7 +10,7 @@ export class LoginService {
 
   userName = '';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   public login(email: string, password: string) {
     let url = environment.baseUrl + 'login';

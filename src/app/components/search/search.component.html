@@ -1,0 +1,5 @@
+<div><img class="loading" src="assets\images\loading.gif" alt="loading" *ngIf="isLoading"></div>
+<div><img class="icon" src="assets\images\search_icon.png" alt="search">
+  <input #search (input)="onValueChange(search.value)" type="search" id="search" placeholder="search for items">
+  <!-- TODO: ask eldar on enter key fire an event -->
+</div>

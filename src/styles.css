@@ -4,11 +4,15 @@
 :root {
   --devil-red: #d90f49;
   --devil-black: #351111;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   font-family: 'Poppins', sans-serif;
   color: #d90f49;
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -47,6 +51,7 @@ a:hover {
   width: fit-content;
   padding-bottom: 5px;
 }
+
 input {
   display: block;
   margin: auto;
@@ -79,12 +84,13 @@ h4 {
 }
 
 .small-button {
+  display: inline;
   border-radius: 10px;
   font-size: 0.7rem;
   font-weight: bold;
-  margin-right: 0%;
   color: white;
   -webkit-text-fill-color: currentColor;
+  margin: 5px;
 }
 
 .modal-close {
@@ -97,15 +103,38 @@ h4 {
 }
 
 /* scroll bar css */
-.table::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
   height: 8px;
 }
-.table::-webkit-scrollbar-track {
+
+::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
 }
-.table::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
   background-color: var(--devil-red);
   border-radius: 10px;
+}
+
+.delete {
+  display: inline;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.edit {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  padding-right: 5%;
+  color: #ff326c;
+  font-weight: bold;
+  background: none;
+}
+
+.edit:hover {
+  color: #351111;
+  background: none;
 }

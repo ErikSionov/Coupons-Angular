@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('token', token.toString());
         console.log(sessionStorage.getItem('token'));
         this.router.navigate([
-          'welcome',
+          'welcome/companies',
         ]);
       },
       error: (err) => {
